@@ -1,0 +1,22 @@
+{% extends 'patient/base.html' %}
+
+{% block content %}
+<h1>Search Patients</h1>
+
+        <div class="container mt-5">
+            <div id="custom-search-input">
+                <form action="search_results" method="GET">
+                    <div class="input-group mb-2">
+                        <input type="Search" name="q" class="form-control" placeholder="  البحث بالاسم او رقم الموبايل  ">
+                        <span class="input-group-btn " class=" glyphicon glyphicon-search ">
+                            <div class="input-group-append">
+                                <input class="btn btn-danger " value="Search" type="submit">
+                            </div>
+                        </span>
+                    </div>
+                    <small class="form-text text-muted">Enter Patient name or phone number</small>
+                </form>
+            </div>
+        </div>
+
+{% endblock content %}

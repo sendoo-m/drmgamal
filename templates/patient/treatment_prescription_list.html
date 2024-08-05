@@ -1,0 +1,83 @@
+{% extends 'patient/base.html' %}
+
+{% block title %}Treatment Prescription List | قائمة روشتات العلاج{% endblock %}
+
+{% block content %}
+  <h1>Treatment Prescription List</h1>
+
+  <form method="get" class="form-inline mb-3">
+    <div class="form-group mr-2">
+        {{ search_form.search_query.label_tag }}
+        {{ search_form.search_query }}
+    </div>
+    <div class="form-group mr-2">
+        {{ search_form.name.label_tag }}
+        {{ search_form.name }}
+    </div>
+   <br>
+    <button type="submit" class="btn btn-primary">Search</button>
+    
+    <a href="{% url 'patient:treatment_prescription_list' %}" class="btn btn-secondary  ml-2">Clear</a>
+  </form>
+  <br >
+<br >
+
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>patient</th>
+        <th>treatments1</th>
+        <th>treatments2</th>
+        
+        <th>dosage_and_times</th>
+        
+        <th>next_consultation_date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for t_Prescription in page_obj %}
+      <tr class="{% cycle 'table-secondary' 'table-white' %}">
+        <td><a href="{% url 'patient:treatment_prescription_update' t_Prescription.id %}">{{ t_Prescription.patient }}</a></td>
+        <td>{{ t_Prescription.treatments1 }}</td>
+        <td>{{ t_Prescription.treatments2 }}</td>
+        
+        <td>{{ t_Prescription.dosage_and_times }}</td>
+        
+        <td>{{ t_Prescription.next_consultation_date }}</td>
+        <td>
+          <a href="{% url 'patient:treatment_prescription_detail' t_Prescription.id %}" class="btn btn-primary">Medical prescription </a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>                                               
+                           
+  <!--  =======================  start pagination =======================  -->
+  <div class="d-flex justify-content-center">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            {% if page_obj.has_previous %}
+                <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+            {% else %}
+                <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+            {% endif %}
+            {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                    <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                    <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                {% endif %}
+            {% endfor %}
+            {% if page_obj.has_next %}
+                <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+            {% else %}
+                <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
+            {% endif %}
+        </ul>
+    </nav>
+</div>
+  <!--  =======================  end pagination =======================  -->
+  <div><a href="{% url 'patient:treatment_prescription_create' %}" class="btn btn-primary">Add Medical prescription </a></div>
+        
+{% endblock %}

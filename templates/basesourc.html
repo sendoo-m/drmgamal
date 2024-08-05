@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+  {% block head %}
+	{% load static %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static '/css/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static '/css/styles.css' %}">
+	<script src="{% static '/js/jquery-3.4.1.min.js' %}"></script>
+  {% endblock %}
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand logo" href="index.html"><img src="{% static '/image/stwlogo-2.png' %}" alt="STW"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
+          {% if user.is_authenticated and user.is_doctor %}
+          <li class="nav-item"><a href="/appointment-request" class="nav-link">Appointments</a></li>
+          <li class="nav-item"><a href="" class="nav-link">{{user.username}}</a></li>
+           &nbsp;&nbsp;<li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>
+          {% elif user.is_authenticated %}
+          <li class="nav-item"><a href="" class="nav-link">{{user.username}}</a></li>
+           &nbsp;&nbsp;<li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>
+           <li class="book-app"><a href="/appointment"><button class="btn btn-info">Book Appointment</button></a></li>
+           {% else %}
+          <li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
+           <li class="nav-item"><a href="/user/register" class="nav-link">SignUp</a></li>
+           <li class="book-app"><a href="/appointment"><button class="btn btn-info testing">Book Appointment</button></a></li>
+           {% endif %}
+          <!--<li class="nav-item"><a href="departments.html" class="nav-link">Departments</a></li>
+          <li class="nav-item"><a href="doctor.html" class="nav-link">Doctors</a></li>
+          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item cta"><a href="contact.html" class="nav-link" data-toggle="modal" data-target="#modalAppointment"><span>Make an Appointment</span></a></li> -->
+        </ul>&nbsp;
+        &nbsp;
+      </div>
+    </div>
+  </nav>
+  <div class="wrapper">
+{% block content %}
+
+
+
+{% endblock %}
+</div>
+<footer>
+  
+  
+</footer>
+<!--<script type="text/javascript">
+  $(document).ready(function($){
+    $('.testing').on(click , function(){
+      alert("Login First!!!!");
+    })
+  })
+</script>-->
+</body>
+</html>

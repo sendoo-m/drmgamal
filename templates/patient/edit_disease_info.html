@@ -1,0 +1,21 @@
+{% extends 'patient/base.html' %}
+{% block title %}Edit Disease Information | تعديل تشخيص المريض{% endblock %}
+{% load crispy_forms_tags %}
+{% load django_summernote %}
+
+{% block content %}
+<h1>Edit Disease Information</h1>
+<form method="post">
+  {% csrf_token %}
+  
+  {% for field in form %}
+    {% if field.name in ['medical_history', 'complaint', 'previous_checks', 'doctor_notes'] %}
+      {{ field|as_sommernote }}
+    {% else %}
+      {{ field|crispy }}
+    {% endif %}
+  {% endfor %}
+  
+  <button type="submit">Create</button>
+</form>
+{% endblock %}

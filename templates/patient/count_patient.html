@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="bg-mage"style="background-image: url({% static '/image/bg_3.jpg' %}); background-attachment:fixed;">
+	<div class="overlay"></div>
+	<div class="container">
+		<h2 class="text-center">Count Info</h2>
+		<div class="row">
+		
+			<div class="col-12">
+				<div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+					<div class="wrapper wrapper--w680">
+						<div class="card card-4">
+							<div class="card-body">
+								
+								<h2 class="title">Total All Patients Count: { {{ patient_counts }} }</h2>
+								<h2 class="title">Date Info :</h2>
+								{% comment %} {% if query %}		 {% endcomment %}
+								<table class="table table-hover">
+									
+										{% for querys in query %}
+										<tbody>
+										<tr>
+											<th class='text-primary'>File Number</th>
+											<th class='text-danger'>{{ querys.file_number }}</th>
+											<th class='text-primary'>Name</th>
+											<th class='text-danger'>{{ querys.name }}</th>
+											<th class='text-primary'>Date</th>
+											<th class='text-danger'>{{ querys.date }}</th>
+										</tr>
+										{% endfor %}
+									</tbody>
+								</table>
+								{% comment %} {% endif %} {% endcomment %}
+                            </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock content %}
+</body>
+</html>

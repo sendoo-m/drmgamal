@@ -1,0 +1,302 @@
+#backgroundimage {
+    /*background-image: url("/image/doctorSearchBan.jpg");*/
+    /*width: 100vw;
+height: 50vh;*/
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+#backgroundimage img {
+    height: 150px;
+    width: 100%;
+    position: relative;
+}
+
+.text-block {
+    position: absolute;
+    bottom: 36%;
+    right: 44%;
+    /* background-color: black; */
+    color: white !important;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+}
+
+.text-block h1 {
+    color: white !important;
+}
+
+#register-box {
+    position: relative;
+    margin: 10px auto;
+    min-height: auto;
+    /*height: auto;*/
+    width: 1024px;
+    background: #aaa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    /*padding-bottom: 50px;*/
+}
+
+.left-box {
+    position: absolute;
+    left: 0;
+    box-sizing: border-box;
+    width: 512px;
+    height: 700px;
+    font-family: Verdana;
+    font-size: 20px;
+}
+
+.right-box {
+    background-color: #c100fe;
+    position: relative;
+    /*top: 0;*/
+    /*right: 0;*/
+    box-sizing: border-box;
+    padding: 40px;
+    width: 520px;
+    height: auto;
+    font-family: Verdana;
+}
+
+.text-muted {
+    display: none;
+}
+
+.left-box img {
+    width: 100%;
+    height: 468px;
+}
+
+#login-box {
+    position: relative;
+    margin: 10px auto;
+    min-height: auto;
+    /*height: auto;*/
+    width: 1024px;
+    background: #aaa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    /*padding-bottom: 50px;*/
+}
+
+.login-left-box {
+    position: absolute;
+    /*top:0;*/
+    left: 0;
+    box-sizing: border-box;
+    /*padding: 40px 10px 40px 40px;*/
+    width: 512px;
+    height: 700px;
+    font-family: Verdana;
+    font-size: 20px;
+    /*background-size: cover;
+	background-position: center;*/
+}
+
+.login-right-box {
+    background-color: #66007a;
+    position: absolute;
+    /*top: 0;*/
+    right: 0;
+    box-sizing: border-box;
+    padding: 40px;
+    width: 512px;
+    height: 500px;
+    font-family: Verdana;
+}
+
+.text-muted {
+    display: none;
+}
+
+.login-left-box img {
+    width: 100%;
+    height: 285px;
+    font-family: Verdana;
+    /*min-width: auto;*/
+}
+
+
+/*.appoint-list {
+	width: 100%;
+	background-color: #808080;
+}*/
+
+.list-view {
+    text-align: center;
+    height: auto;
+    padding: 40px;
+    border: 2px solid #00bffe;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    margin-left: auto;
+    margin-right: auto;
+    ;
+}
+
+.col-md-8.view {
+    margin: 0 auto;
+}
+
+.view-table {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    font-family: Verdana;
+    font-size: 20px;
+    /*font-weight: 300px;*/
+    color: #292929;
+    margin-left: 10%;
+    /*	border-spacing: 0 15px;*/
+}
+
+.view-table th {
+    color: #0026fe;
+    padding: 5px;
+    margin: 0 auto;
+}
+
+th,
+td {
+    /*width: 150px; */
+    text-align: justify;
+    /* font-family:satisfy !important;*/
+    /*padding: 10px;*/
+}
+
+.details-list-view {
+    margin: 10px auto;
+    width: 900px;
+    height: 500px;
+    padding: 40px;
+    position: relative;
+    border-top: 2px solid #00bffe;
+    /*border-radius: 10px;*/
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.details-view-table {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 300px;
+    color: black;
+    border-spacing: 0 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+}
+
+.details-list-view h3 {
+    color: #00bffe;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+.details-list-view p {
+    color: #292929;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+.appointment-form {
+    font-family: Verdana;
+    font-size: 20px;
+}
+
+.text-center {
+    font-family: Verdana;
+    color: rgb(2, 13, 116);
+    font-weight: 600;
+}
+
+.list-appo {
+    font-family: cursive;
+    font-size: 35px;
+}
+
+
+/* home page*/
+
+.search-section {
+    text-align: center;
+    padding-top: 30px;
+    font-family: cursive;
+}
+
+.search-section h1 {
+    padding: 30px;
+}
+
+.input-section {
+    border-radius: 20px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.my-form {
+    text-align: center;
+}
+
+.search-wrapper {
+    width: 100%;
+}
+
+.search-wrapper .button {
+    padding: 20px;
+}
+
+.search-wrapper .button a {
+    text-align: center;
+}
+
+.search-wrapper .basic-button {
+    height: 50px;
+    width: 100px;
+    border-radius: 20px;
+}
+
+.search-wrapper .pri-button {
+    height: 50px;
+    width: 100px;
+    margin: 30px;
+    border-radius: 20px;
+}
+
+.search-inner-wrapper {
+    width: 700px;
+    margin: 0 auto;
+}
+
+.logo {
+    /*padding-left: 30px;*/
+    text-align: center;
+}
+
+.logo img {
+    text-align: center;
+    width: 100px;
+    height: auto;
+    /*padding-top: 30px;*/
+}
+
+#ftco-nav {
+    font-family: Verdana !important;
+    font-size: 30px;
+}
+
+
+/* search */
+
+.search-wrapper {
+    font-family: Verdana;
+}
+
+.new-form {
+    color: black;
+}

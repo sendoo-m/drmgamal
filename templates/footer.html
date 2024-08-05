@@ -1,0 +1,33 @@
+{% block content %} {% load static %}
+<style>
+    .container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+        flex-grow: 1; /* Allow the container to grow and push the footer to the bottom */
+    }
+    
+    footer {
+        background-color: #010499;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        margin-top: 20px; /* Add some spacing between the content and the footer */
+    }
+</style>
+<!--Bottom Footer-->
+<div class="bottom section-padding bg-info">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center text-white">
+                <div class="copyright">
+
+                    <p>© Color Print 2022 | Made with ♥ by Eng. Mohamed Gamal 01027005313 | All rights reserved.</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Bottom Footer-->
+{% endblock content %} 

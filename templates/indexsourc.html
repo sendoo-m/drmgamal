@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+	{% block content %}
+  {% load static %}
+	 <!-- <div class="container"> -->
+	 	<div class="hero-wrap" style="background-image: url({% static '/image/bg_3.jpg' %}); background-attachment:fixed;">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+          <div class="search-section col-md-12">
+           <h1 class="">Search Information</h1>
+          <form method='GET' class='' action="/search" >
+    
+        <div class="input-group form-group-no-border" style="margin-bottom: 0px; font-size: 32px;">
+            <span class="input-group-addon " style='color:#000'>
+                <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
+            </span>
+            <div class="form-group search-wrapper">
+              <div class="search-inner-wrapper">
+            <input type="text" name="search" class="form-control  input-section" placeholder="Search..." autofocus="autofocus" id='searchInputs'>
+             
+            </div>
+            <div class="form-group button">
+              <button type="submit" name="submit" class="btn btn-danger basic-button enableOnInputs" disabled='disabled'>Search</button>
+              <button type="reset" name="reset" class="btn btn-primary pri-button enableOnInputs" disabled='disabled'>Reset</button>
+              
+
+            </div>
+        </div>
+    </div>
+
+    </form>
+
+</div>
+          <!-- <div class="col-md-8 ftco-animate text-center">
+            <h1 class="mb-4">The most valuable thing is your Health</h1>
+            <p>We care about your health Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+
+
+	<!--  </div> -->
+	 	
+
+
+<script type='text/javascript'>
+    $(function ($) {
+        $('#searchInputs').keyup(function () {
+            if ($(this).val() == '') {
+                $('.enableOnInputs').prop('disabled', true);
+            } else {
+                $('.enableOnInputs').prop('disabled', false);
+            }
+        });
+    });
+</script>
+{% endblock %}
+<!-- </body>
+</html> -->

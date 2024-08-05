@@ -1,0 +1,84 @@
+{% extends 'patient/base.html' %}
+{% load static %}
+{% block content %}
+<html>
+<body>
+<div class="bg-mage"style="background-image: url({% static '/image/bg_3.jpg' %}); background-attachment:fixed;">
+      <div class="overlay"></div>
+	<div class="container">
+		<h2 class="text-center"> Search Result</h2>
+		<div class="row">
+		
+			<div class="col-12">
+				<div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+					<div class="wrapper wrapper--w680">
+						<div class="card card-4">
+							<div class="card-body">
+								{% if patients %} {% for patient in patients %}
+								<h2 class="title">Result Search {{patient.name}}</h2>
+								
+								<div class="row">
+									
+									<div class="col-md-6">
+										<div class="container">
+											
+										<table class="table-striped"> 
+											<table class="table table-hover">
+												<thead>
+													<tbody>
+													<tr>
+														<th scope="col">Occupation</th>
+														<th scope="row">{{patient.occupation}}</th>
+													</tr>
+													<tr>
+														<th scope="col">File Number</th>
+														<td>{{patient.file_number}}</td>
+													</tr>
+													<tr>
+														<th scope="col">Full Name</th>
+														<td><a href="{% url 'patient:patient_detail' patient.pk %}">{{ patient.name }}</td>
+													</tr>
+													<tr>
+														<th scope="col">Birth Date</th>
+														<td>{{patient.birthdate}}</td>
+													</tr>
+													
+													<tr>
+														<th scope="col">Mobile No</th>
+														<td>{{patient.mobile_number}}</td>
+													</tr>
+												
+													<tr>
+														<th scope="col">Action</th>
+														<td><a href="{% url 'patient:patient_update' patient.pk  %}" class="btn btn-info btm-sm">Modify Patient</a></td>
+													</tr>
+												</tbody>
+											</table>
+										
+											{% endfor %} {% else %}
+											<h2 style="color: darkred;">
+												<p>No patients found matching your search query.</p>
+											</h2>
+											{% endif %}
+										<p> <a href="{% url 'patient:patient_registration' %}" class='btn btn-info'>Add Patient</a> or .. <a href="{% url 'patient:search' %}" class='btn btn-info'>Search Patient</a></p>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<img src="{% static '/image/drbaby.png' %}" alt="" class="img-fluid gambar-diri">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	</body>
+</html>
+
+ 
+
+{% endblock content %}

@@ -1,0 +1,107 @@
+{% extends 'patient/base.html' %}
+{% block title %}Patient Details | تفاصيل المريض{% endblock %}
+
+{% block content %}
+  <h1>Patient Details</h1>
+  <div class="table-responsive">
+    <table class="table table-striped table-hover" style="direction:rtl">
+      <thead>
+        <tr>
+          <th>رقم الملف</th>
+          <th>الاسم</th>
+          <th>السن</th>
+          <th>رقم الموبايل</th>
+          <th>المهنة</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>{{ patient.file_number }}</td>
+              <td>{{ patient.name }}</td>
+              <td>{{ patient.age }}</td>
+              <td>{{ patient.mobile_number }}</td>
+              <td>{{ patient.occupation }}</td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+  
+  <h2>Disease Information</h2>
+  {% for disease_info in patient.diseaseinfo_set.all %}
+    <table class="table table-striped table-hover">
+      <tbody>
+        <tr>
+          <th>Today's Date:</th>
+          <td>{{ disease_info.today_date }}</td>
+        </tr>
+        <tr>
+          <th>Medical History:</th>
+          <td>{{ disease_info.medical_history|safe }}</td>
+        </tr>
+        <tr>
+          <th>Complaint:</th>
+          <td>{{ disease_info.complaint|safe }}</td>
+        </tr>
+        <tr>
+          <th>Previous Checks:</th>
+          <td>{{ disease_info.previous_checks|safe }}</td>
+        </tr>
+        <tr>
+          <th>Pressure Gauge:</th>
+          <td>{{ disease_info.pressure_gauge }}</td>
+        </tr>
+        <tr>
+          <th>Sugar Meter:</th>
+          <td>{{ disease_info.sugar_meter }}</td>
+        </tr>
+        <tr>
+          <th>Weight:</th>
+          <td>{{ disease_info.weight }}</td>
+        </tr>
+        <tr>
+          <th>Doctor Notes:</th>
+          <td>{{ disease_info.doctor_notes|safe }}</td>
+        </tr>
+        <tr>
+          <th>Treatments 1:</th>
+          <td>{{ disease_info.treatments1 }}</td>
+        </tr>
+        <tr>
+          <th>Treatments 2:</th>
+          <td>{{ disease_info.treatments2 }}</td>
+        </tr>
+        <tr>
+          <th>Treatments 3:</th>
+          <td>{{ disease_info.treatments3 }}</td>
+        </tr>
+        <tr>
+          <th>Treatments 4:</th>
+          <td>{{ disease_info.treatments4 }}</td>
+        </tr>
+        <tr>
+          <th>Treatments 5:</th>
+          <td>{{ disease_info.treatments5 }}</td>
+        </tr>
+        <tr>
+          <th>Treatments 6:</th>
+          <td>{{ disease_info.treatments6 }}</td>
+        </tr>
+        <tr>
+          <th>Treatments 7:</th>
+          <td>{{ disease_info.treatments7 }}</td>
+        </tr>
+        <tr>
+          <td colspan="2"><a href="{% url 'patient:disease_info_update' patient.pk %}" class="btn btn-primary">Edit</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+  {% empty %}
+    <p>No disease information available.</p>
+    {% if not patient.diseaseinfo_set.all %}
+    <p><a href="{% url 'patient:disease_info_create' %}" class="btn btn-primary">create Disease Information</a></p>
+    {% endif %}
+    {% endfor %}
+    
+    <p><a href="{% url 'patient:treatment_prescription_create' %}" class="btn btn-primary">Add Disease Information</a></p>
+{% endblock %}

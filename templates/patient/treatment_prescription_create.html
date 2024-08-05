@@ -1,0 +1,17 @@
+{% extends 'patient/base.html' %}
+
+{% block title %}Add Prescription Treatment | إضافة روشتة العلاج{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<h1>Create Prescription Treatment</h1>
+
+<form method="post">
+  {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit">Add Prescription Treatment</button>
+  </form>
+  
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends 'patient/base.html' %}
+{% block title %}Patient Treatment prescription Details | تفاصيل  روشتة المريض{% endblock %}
+
+{% block content %}
+<style>
+  /* Hide the button on the print paper and header and footer */
+  @media print {
+    .print-button {
+      display: none;
+    }
+    @page {
+      size: auto;   /* auto is the initial value */
+      margin: 0;  /* this affects the margin in the printer settings */
+    }
+    body {
+      margin: 0; /* this affects the margin on the content before sending to printer */
+    }
+  }
+</style>
+<div>
+  <div class=" mb-4 d-flex flex-row-reverse">
+    <div class=" text-center">
+      <div>دكتور محمد جمال صقر</div>
+      <div>دكتوراه الجهاز الهضمي</div>
+      <div>M. D.</div>
+      <div>نائب وحدة السكر والغدد الصماء "سابقا"</div>
+      <div>كلية طب عين شمس</div>
+    </div>
+  </div>
+
+  <h2>Treatment Prescription Details</h2>
+  <table class="table table-striped table-hover">
+    <tbody>
+      <tr>
+        <th>Patient:</th>
+        <td>{{ treatment_prescription_detail.patient.name }}</td>
+      </tr>
+      <tr>
+        <th>Treatment 1:</th>
+        <td>{{ treatment_prescription_detail.treatments1 }}</td>
+      </tr>
+      <tr>
+        <th>Treatment 2:</th>
+        <td>{{ treatment_prescription_detail.treatments2 }}</td>
+      </tr>
+      <tr>
+        <th>Treatment 3:</th>
+        <td>{{ treatment_prescription_detail.treatments3 }}</td>
+      </tr>
+      <tr>
+        <th>Treatment 4:</th>
+        <td>{{ treatment_prescription_detail.treatments4 }}</td>
+      </tr>
+      <tr>
+        <th>Treatment 5:</th>
+        <td>{{ treatment_prescription_detail.treatments5 }}</td>
+      </tr>
+      <tr>
+        <th>Treatment 6:</th>
+        <td>{{ treatment_prescription_detail.treatments6 }}</td>
+      </tr>
+      <tr>
+        <th>Treatment 7:</th>
+        <td>{{ treatment_prescription_detail.treatments7 }}</td>
+      </tr>
+      <tr>
+        <th>Dosage and Times:</th>
+        <td>{{ treatment_prescription_detail.dosage_and_times }}</td>
+      </tr>
+      <tr>
+        <th>Doctor Recommendations:</th>
+        <td>{{ treatment_prescription_detail.doctor_recommendations }}</td>
+      </tr>
+      <tr>
+        <th>Next Consultation Date:</th>
+        <td>{{ treatment_prescription_detail.next_consultation_date }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+<div>
+    <hr>
+  <div class="text-center">
+    Phone: 34001510 - 39140670
+  </div>
+  </div>
+</div>
+<div>
+  <button class="btn btn-primary print-button" onclick="printReceipt()">Print</button>
+</div>
+<script>
+  function printReceipt() {
+    window.print();
+  }
+</script>  
+{% endblock %}

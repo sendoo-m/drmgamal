@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+  {% block head %}
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static '/css/style-full-filebootstrap.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static '/css/styles-doc-data.css' %}">
+	<script src="{% static '/js/jquery-3.4.1.min.js' %}"></script>
+  {% endblock %}
+</head>
+    <body>
+      {% include "nav.html" %}
+ 
+ 
+        {% block content %}
+        {% endblock %}
+        
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+        <script src="{% static 'js/popper.min.js' %}"></script>
+        <script src="{% static 'js/tether.min.js' %}"></script>
+        <script src="{% static 'js/fontawesome.js' %}"></script>
+  {% include "footer.html" %}
+</body>
+</html>

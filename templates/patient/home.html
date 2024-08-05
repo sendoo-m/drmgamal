@@ -1,0 +1,116 @@
+{% extends 'patient/base.html' %}
+{% block title %}Home Dr A. Yassin | الرئيسية{% endblock %}
+{% block content %}
+
+  
+  
+  <div class="bg-primary mb-4">
+    <h2 class="text-center mb-2 text-white bg-primary">Welcome to Patient Management System</h2>
+  </div> 
+  <p class="mb-4">This system allows you to manage patient information and search for patients by name or mobile number.</p>
+  <div class="row justify-content-center">
+
+<div class="row">
+      <div class="col-md-4 mb-4">
+        <a href="{% url 'patient:home' %}" class="card text-decoration-none">
+          <div class="card-body">
+            <i class="fas fa-home fa-4x text-primary mb-3"></i>
+            <h5 class="card-title">Home</h5>
+            <p class="card-text">Look up patient information by name or mobile number.</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4 mb-4">
+        <a href="{% url 'patient:search' %}" class="card text-decoration-none">
+          <div class="card-body">
+            <i class="fas fa-search fa-4x text-warning mb-3"></i>
+            <h5 class="card-title">Search Patients</h5>
+            <p class="card-text">Look up patient information by name or mobile number.</p>
+          </div>
+        </a>
+      </div>
+    
+    <div class="col-md-4 mb-4">
+      <a href="{% url 'patient:patient_list' %}" class="card text-decoration-none">
+        <div class="card-body">
+          <i class="fas fa-users fa-4x text-secondary mb-3"></i>
+          <h5 class="card-title">View All Patients</h5>
+          <p class="card-text">See the list of all registered patients.</p>
+        </div>
+      </a>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+      <a href="{% url 'patient:patient_registration' %}" class="card text-decoration-none">
+        <div class="card-body">
+          <i class="fas fa-user-plus fa-4x text-success mb-3"></i>
+          <h5 class="card-title">Create New Patient</h5>
+          <p class="card-text">Add a new patient to the system.</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-4 mb-4">
+      <a href="{% url 'patient:disease_info_create' %}" class="card text-decoration-none">
+        <div class="card-body">
+          <i class="fas fa-chart-bar fa-4x text-danger mb-3"></i>
+          <h5 class="card-title">Create disease info</h5>
+          <p class="card-text">Add disease info for any registered patients.</p>
+        </div>
+      </a>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+      <a href="{% url 'patient:treatment_prescription_create' %}" class="card text-decoration-none">
+        <div class="card-body">
+          <i class="fas fa-file-alt fa-4x text-info mb-3"></i>
+          <h5 class="card-title">Create treatment prescription</h5>
+          <p class="card-text">Add treatment prescription for any registered patients.</p>
+        </div>
+      </a>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+      <a href="{% url 'patient:treatment_prescription_list' %}" class="card text-decoration-none">
+        <div class="card-body">
+          <i class="fas fa-clipboard-list fa-4x text-primary mb-3"></i>
+          <h5 class="card-title">Treatment prescription</h5>
+          <p class="card-text">List treatment prescription for any registered patients.</p>
+        </div>
+      </a>
+    </div>
+
+      <div class="col-md-4 mb-4">
+        <a href="#" class="card text-decoration-none">
+          <div class="card-body">
+            <i class="fas fa-info-circle fa-4x text-primary mb-3"></i>
+            <h5 class="card-title">About Us</h5>
+            <p class="card-text">Learn more about our patient management system.</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4 mb-4">
+        <a href="#" class="card text-decoration-none">
+          <div class="card-body">
+            <i class="fas fa-envelope fs-1 mb-3"></i>
+            <h5 class="card-title">Contact Us</h5>
+            <p class="card-text">Get in touch with us for more information.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+
+
+
+
+</div>
+{% endblock %}
+
+    
+<!-- <div class="col-12 col-md-6 col-lg-3 mb-4">
+  <a href="#" class="d-flex flex-column align-items-center justify-content-center  {% if request.resolver_match.url_name == '#' %}active{% endif %}" style="text-decoration: none;">
+    <i class="fas fa-calendar-day fa-4x text-secondary mb-3"></i>
+    <span class="text-center text-uppercase font-weight-bold" style="font-size: 18px;"> تقرير يومي</span>  Daily patient_detail 
+  </a>
+</div> -->
